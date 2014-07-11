@@ -1,7 +1,7 @@
 DESCRIPTION
 -----------
 
-This is code related to kernel-based Markov blanket discovery *for large, high dimensional datasets*, either by conditional dependence-based or dependence-based approximation methods.
+This is code related to kernel-based Markov blanket discovery particularly suitable for *large, high dimensional datasets*, either by conditional dependence-based or dependence-based approximation methods.
 
 CODE
 ----
