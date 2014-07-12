@@ -16,12 +16,12 @@ Please download the entire package (including the utility functions)
 
 *Main Methods*
 
-- ExcCD.m - Rank variables using a conditional dependence measure with predictor-exclusion kernels
+- ExcCD.m - Rank variables using a conditional dependence measure with predictor exclusion kernels
 
-- ExcD.m - Rank variables using a dependence measure with predictor-exclusion kernels
+- ExcD.m - Rank variables using a dependence measure with predictor exclusion kernels
 
-- IncD.m - Rank variables using a dependence measure with predictor-inclusion kernels
-
+- IncD.m - Rank variables using a dependence measure with predictor inclusion kernels
+- 
 *Others*
 
 - demo.m - Examples
