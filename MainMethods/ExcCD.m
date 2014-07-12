@@ -1,4 +1,4 @@
-function [Ranked,KCDM] = ExcCD(x,tar,kernel_type,task_type,eta)
+function [Ranked,KDM] = ExcCD(x,tar,kernel_type,task_type,eta)
 % Inputs:
 % (1) x = data matrix, where rows are instances and columns are features
 % (2) TarIndx = column index of the target
@@ -9,7 +9,7 @@ function [Ranked,KCDM] = ExcCD(x,tar,kernel_type,task_type,eta)
 % Outputs:
 % (1) Ranked = ranking of features in ascending order (least to most likely
 %     in Markov blanket)
-% (2) KCDM = kernel-based conditional dependence measure when each feature
+% (2) KDM = kernel-based conditional dependence measure when each feature
 %     is eliminated. A larger value favors a feature.
 %
 
@@ -35,7 +35,7 @@ Ky = Q*(Ky)*Q;
 
 dotxA = x*x';
 sigxA = DetermineSig(dotxA);
-KCDM = zeros(1,length(xindices));
+KDM = zeros(1,length(xindices));
 for t=1:c-1,
     if mod(t,20)==0 || t==c-1,
         fprintf_r('Kernels computed: %i', t);
@@ -44,11 +44,11 @@ for t=1:c-1,
     dotx = dotxA-dotx;
     Kx = KernelType(dotx,kernel_type,sigxA);
     Kx = Q*(Kx)*Q+r*eta*eye(r);
-    KCDM(t) = trace(Ky/Kx);
+    KDM(t) = trace(Ky/Kx);
 end
 fprintf_r('reset');
 fprintf('\n')
 
-[~,idx] = sort(KCDM);
+[~,idx] = sort(KDM);
 Ranked = xindices(idx);
 end
