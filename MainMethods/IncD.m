@@ -1,4 +1,4 @@
-function [Ranked,KCDM] = IncD(x,tar,kernel_type,task_type)
+function [Ranked,KDM] = IncD(x,tar,kernel_type,task_type)
 % Inputs:
 % (1) x = data matrix, where rows are instances and columns are features
 % (2) TarIndx = column index of the target
@@ -30,7 +30,7 @@ end
 Q=eye(r)-1/r;
 Ky = Q*(Ky)*Q;
 
-KCDM = zeros(1,length(xindices));
+KDM = zeros(1,length(xindices));
 for t=1:c-1,
     if mod(t,20)==0 || t==c-1,
         fprintf_r('Kernels computed: %i', t);
@@ -38,11 +38,11 @@ for t=1:c-1,
     dotx = x(:,t)*x(:,t)';
     Kx = KernelType(dotx,kernel_type);
     Kx = Q*(Kx)*Q;
-    KCDM(t) = trace(Ky*Kx)/norm(Kx,'fro');
+    KDM(t) = trace(Ky*Kx)/norm(Kx,'fro');
 end
 fprintf_r('reset');
 fprintf('\n')
 
-[~,idx] = sort(KCDM);
+[~,idx] = sort(KDM);
 Ranked = xindices(idx);
 end
