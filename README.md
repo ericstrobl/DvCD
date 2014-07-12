@@ -21,7 +21,7 @@ Please download the entire package (including the utility functions)
 - ExcD.m - Rank variables using a dependence measure with predictor exclusion kernels
 
 - IncD.m - Rank variables using a dependence measure with predictor inclusion kernels
-- 
+
 *Others*
 
 - demo.m - Examples
