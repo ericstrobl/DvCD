@@ -7,7 +7,7 @@ Practically, the algorithm can help scientistis plan their experiments from obse
 
 As a general rule for high dimensional data, we recommend using ExcCD when samples are above several hundred and ExcD or IncD when samples are below several hundred.
 
-Equivalent code repository for smaller datasets: https://github.com/ericstrobl/MarkovBlanket/
+Sister repository for smaller datasets: https://github.com/ericstrobl/MarkovBlanket/
 
 CODE
 ----
