@@ -6,7 +6,7 @@ function [Ranked,KCDM] = ExcD(x,tar,kernel_type,task_type)
 % (4) task_type = 'class' for classification, 'reg' for regression
 %
 % Outputs:
-% (1) Ranked = ranking of features in ascending order (least to most likely
+% (1) Ranked = ranking of features in descending order (most to least likely
 %     in Markov blanket)
 % (2) KCDM = kernel-based conditional dependence measure when each feature
 %     is eliminated. A larger value favors a feature.
