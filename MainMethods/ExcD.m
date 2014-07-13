@@ -6,7 +6,7 @@ function [Ranked,KDM] = ExcD(x,tar,kernel_type,task_type)
 % (4) task_type = 'class' for classification, 'reg' for regression
 %
 % Outputs:
-% (1) Ranked = ranking of features in descending order (most to least likely
+% (1) Ranked = ranking of features in ascending order (least to most likely
 %     in Markov blanket)
 % (2) KDM = kernel-based conditional dependence measure when each feature
 %     is eliminated. A larger value favors a feature.
@@ -20,6 +20,7 @@ xindices = 1:c;
 xindices(tar) = [];
 y = x(:,tar);
 x(:,tar) = [];
+x = zscore(x);
 
 if strcmp(task_type, 'class')
     Ky = kronDel(y);
@@ -41,7 +42,7 @@ for t=1:c-1,
     dotx = dotxA-dotx;
     Kx = KernelType(dotx,kernel_type,sigxA);
     Kx = Q*(Kx)*Q;
-    KDM(t) = trace(Ky*Kx)/norm(Kx,'fro');
+    KDM(t) = trace(Ky*Kx);
     if KDM(t)<0,
         KDM(t) = 0;
     end
