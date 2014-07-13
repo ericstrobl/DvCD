@@ -15,7 +15,7 @@ function [Ranked,KCDM] = ExcCD(x,tar,kernel_type,task_type,eta)
 
 SetDefaultValue(3,'kernel_type','rbf');
 SetDefaultValue(4,'task_type','reg');
-SetDefaultValue(5,'reg',1E-4);
+SetDefaultValue(5,'eta',1E-4);
 
 x = zscore(x);
 [r,c] = size(x);
