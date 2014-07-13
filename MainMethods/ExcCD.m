@@ -17,12 +17,12 @@ SetDefaultValue(3,'kernel_type','rbf');
 SetDefaultValue(4,'task_type','reg');
 SetDefaultValue(5,'eta',1E-4);
 
-x = zscore(x);
 [r,c] = size(x);
 xindices = 1:c;
 xindices(tar) = [];
 y = x(:,tar);
 x(:,tar) = [];
+x = zscore(x);
 
 if strcmp(task_type, 'class')
     Ky = kronDel(y);
