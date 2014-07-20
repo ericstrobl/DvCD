@@ -1,7 +1,7 @@
 DESCRIPTION
 -----------
 
-This is MATLAB code for a kernel-based Markov blanket discovery algorithm. The algorithm was designed to compare the utility of dependence and conditional dependence measures in local causal discovery from gene expression data. The associated paper is currently under review.
+This is MATLAB code for a locally causal discovery algorithm. The algorithm was designed to compare the utility of dependence and conditional dependence measures in local causal discovery from gene expression data. The associated paper is currently under review.
 
 Practically, the algorithm can help scientistis plan their experiments from observational data, since the top ranked variables from each algorithm are most likely to be causally related to the target.
 
